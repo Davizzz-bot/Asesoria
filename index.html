@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f2f5;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #10b981 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            font-size: 0.75rem;
+        }
+
+        .cell {
+            padding: 8px 4px;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .cell-header {
+            background: #f9fafb;
+            font-weight: 600;
+        }
+
+        .bg-presencial { background-color: #10b981; color: white; }
+        .bg-virtual { background-color: #0ea5e9; color: white; }
+        
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 flex justify-center">
+
+    <div class="max-w-4xl w-full glass-card overflow-hidden">
+        <!-- Encabezado -->
+        <div class="gradient-bg p-8 text-white text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-2">ASESORÍAS ACADÉMICAS</h1>
+            <p class="text-lg opacity-90">Coordinadas por el docente Sebastián Echavez</p>
+        </div>
+
+        <div class="p-6 md:p-10 grid md:grid-cols-2 gap-10">
+            <!-- Columna Izquierda: Información -->
+            <div class="space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-info-circle text-emerald-500 mr-2"></i> Información Importante
+                    </h2>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-3 text-emerald-500"></i>
+                            <span>Solicita tu cita con al menos <strong>24 horas de anticipación</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-file-alt mt-1 mr-3 text-emerald-500"></i>
+                            <span>Debe adjuntar el <strong>ejercicio específico</strong> de tu duda. <strong>(si lo posee)</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-user-graduate mt-1 mr-3 text-emerald-500"></i>
+                            <span>Atendido por estudiantes de <strong>último semestre</strong>.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-100">
+                    <h3 class="font-bold text-emerald-800 mb-2">Modalidades de Atención:</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="w-4 h-4 bg-presencial rounded mr-2"></div>
+                        <span class="text-sm"><strong>Presencial:</strong> Salón MF 110</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-virtual rounded mr-2"></div>
+                        <span class="text-sm"><strong>Virtual:</strong> Zoom, Meet, Teams</span>
+                    </div>
+                </div>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBI3WspwG5rrV-iArxGxYNKzPX703ULYOT4CyH30lrjSfvSg/viewform?usp=preview" 
+                   target="_blank"
+                   class="block w-full py-4 bg-emerald-500 text-white text-center rounded-xl font-bold text-lg btn-hover transition-all">
+                    SOLICITAR ASESORÍA AQUÍ
+                </a>
+            </div>
+
+            <!-- Columna Derecha: Horario Visual -->
+            <div class="bg-white p-4 rounded-2xl shadow-inner border border-gray-100">
+                <h3 class="text-center font-bold text-gray-700 mb-4">DISPONIBILIDAD</h3>
+                
+                <div class="schedule-grid">
+                    <!-- Cabeceras -->
+                    <div class="cell bg-gray-50 text-[10px]">H</div>
+                    <div class="cell cell-header">L</div>
+                    <div class="cell cell-header">M</div>
+                    <div class="cell cell-header">Mi</div>
+                    <div class="cell cell-header">J</div>
+                    <div class="cell cell-header">V</div>
+                    <div class="cell cell-header">S</div>
+
+                    <!-- AM -->
+                    <div class="cell text-[9px] font-bold">6-11</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell bg-virtual">V</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell bg-presencial">P</div>
+
+                    <!-- MM -->
+                    <div class="cell text-[9px] font-bold">12</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell bg-presencial">P</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell bg-presencial">P</div>
+
+                    <!-- PM 1-2 -->
+                    <div class="cell text-[9px] font-bold">1-2</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell bg-presencial">P</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell bg-presencial">P</div>
+                    <div class="cell bg-virtual">V</div>
+                    <div class="cell italic text-gray-400">---</div>
+
+                    <!-- PM 3-6 -->
+                    <div class="cell text-[9px] font-bold">3-6</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell bg-presencial">P</div>
+                    <div class="cell italic text-gray-400">---</div>
+                    <div class="cell bg-presencial">P</div>
+                    <div class="cell bg-virtual">V</div>
+                    <div class="cell bg-virtual">V</div>
+                </div>
+                
+                <p class="text-[10px] text-gray-400 mt-4 text-center italic">* El horario detallado se encuentra en el formulario.</p>
+            </div>
+        </div>
+
+        <div class="bg-gray-50 p-4 text-center border-t border-gray-100">
+            <p class="text-sm text-gray-500 italic">"Tu éxito académico empieza con una pregunta"</p>
+        </div>
+    </div>
+
+</body>
+</html>
